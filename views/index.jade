@@ -1,0 +1,29 @@
+extends layout
+
+block navbar
+    nav.navibar 
+      li: a( href="#home") Home
+      li: a( href="#tips") More Info
+      li: a( href="#home") Nowhere
+      li: a( href="#learn") Nowhere
+      li: a( href="#community") Nowhere
+      li: a( href="#footer") Contact
+      li: a( href="extra.html") extra
+          
+
+block content
+  div.miblog
+     h1.tituloblog Aquí están las entradas de blog
+    
+     a(href='https://www.facebook.com/inMunich/') Go to Google
+
+     ul
+      - for post in contentful.posts
+        li
+          a(href = post._url)
+           h4: = post.title
+           img(src=asset(post.imagencover))
+
+        
+       
+       
